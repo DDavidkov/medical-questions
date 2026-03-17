@@ -1,0 +1,112 @@
+[
+  {
+    "title": "Cardiology: Chest Pain Differential",
+    "content": "A 58-year-old male presents to the emergency department with sudden onset of severe, tearing chest pain radiating to the back. He has a history of poorly controlled hypertension. On examination, blood pressure is 180/110 mmHg in the right arm and 140/90 mmHg in the left arm. What is the most likely diagnosis?",
+    "answers": [
+      { "content": "Acute myocardial infarction", "is_correct": false },
+      { "content": "Aortic dissection", "is_correct": true },
+      { "content": "Pulmonary embolism", "is_correct": false },
+      { "content": "Tension pneumothorax", "is_correct": false }
+    ],
+    "explanation": "The presentation of sudden, tearing chest pain radiating to the back with a significant blood pressure differential between arms is classic for aortic dissection. The history of poorly controlled hypertension is the most common risk factor. While acute MI can present with chest pain, the tearing quality, radiation to the back, and BP differential point strongly to dissection."
+  },
+  {
+    "title": "Pharmacology: Diabetes Management",
+    "content": "A 52-year-old woman with type 2 diabetes mellitus has been on metformin 1000mg twice daily for 6 months. Her HbA1c remains at 8.2%. She has a BMI of 34 and a history of heart failure with reduced ejection fraction (HFrEF). Which additional medication would be most appropriate?",
+    "answers": [
+      { "content": "Glipizide", "is_correct": false },
+      { "content": "Empagliflozin", "is_correct": true },
+      { "content": "Pioglitazone", "is_correct": false },
+      { "content": "Insulin glargine", "is_correct": false }
+    ],
+    "explanation": "Empagliflozin (an SGLT2 inhibitor) is the best choice because it provides glycemic control, promotes weight loss, and has proven cardiovascular benefits in patients with HFrEF (EMPEROR-Reduced trial). Pioglitazone is contraindicated in heart failure due to fluid retention. Glipizide causes weight gain. Insulin glargine would add to weight without the cardiovascular benefit."
+  },
+  {
+    "title": "Neurology: Stroke Assessment",
+    "content": "A 72-year-old right-handed woman is brought to the ER with sudden onset of left-sided weakness and neglect. CT head is negative for hemorrhage. The symptom onset was 2 hours ago. Her NIHSS score is 14. What is the most appropriate next step in management?",
+    "answers": [
+      { "content": "Administer aspirin 325mg", "is_correct": false },
+      { "content": "Administer IV alteplase", "is_correct": true },
+      { "content": "Perform carotid endarterectomy", "is_correct": false },
+      { "content": "Observe and repeat CT in 24 hours", "is_correct": false }
+    ],
+    "explanation": "This patient presents with an acute ischemic stroke within the 4.5-hour window for IV thrombolysis. With an NIHSS of 14 indicating moderate-to-severe stroke and no evidence of hemorrhage on CT, IV alteplase is the standard of care. Aspirin is given after thrombolysis, not as a substitute. Carotid endarterectomy is for secondary prevention, not acute management."
+  },
+  {
+    "title": "Microbiology: Antibiotic Selection",
+    "content": "A 28-year-old male presents with a painful, swollen, erythematous right knee joint. Arthrocentesis reveals purulent fluid with gram-negative intracellular diplococci. He is sexually active with multiple partners. What is the most appropriate empiric antibiotic regimen?",
+    "answers": [
+      { "content": "Vancomycin IV", "is_correct": false },
+      { "content": "Ceftriaxone IM plus azithromycin PO", "is_correct": true },
+      { "content": "Ciprofloxacin PO", "is_correct": false },
+      { "content": "Doxycycline PO", "is_correct": false }
+    ],
+    "explanation": "Gram-negative intracellular diplococci in a sexually active young male with septic arthritis is classic for disseminated gonococcal infection. Current CDC guidelines recommend ceftriaxone plus azithromycin to cover potential co-infection with Chlamydia and due to rising fluoroquinolone resistance in Neisseria gonorrhoeae."
+  },
+  {
+    "title": "Pathology: Renal Disease",
+    "content": "A 6-year-old boy presents with periorbital edema, frothy urine, and generalized swelling two weeks after a sore throat. Urinalysis shows proteinuria (3+), hematuria, and red blood cell casts. Serum complement C3 is low. What is the most likely diagnosis?",
+    "answers": [
+      { "content": "Minimal change disease", "is_correct": false },
+      { "content": "IgA nephropathy", "is_correct": false },
+      { "content": "Post-streptococcal glomerulonephritis", "is_correct": true },
+      { "content": "Membranous nephropathy", "is_correct": false }
+    ],
+    "explanation": "The triad of nephritic syndrome (hematuria, RBC casts, proteinuria) occurring 1-3 weeks after a streptococcal pharyngitis with low C3 complement is classic for post-streptococcal glomerulonephritis (PSGN). IgA nephropathy presents within days (not weeks) of infection. Minimal change disease presents with nephrotic (not nephritic) syndrome. Membranous nephropathy is rare in children."
+  },
+  {
+    "title": "Biochemistry: Metabolic Disorders",
+    "content": "Which enzyme deficiency is responsible for the accumulation of phenylalanine in phenylketonuria (PKU)?",
+    "answers": [
+      { "content": "Tyrosine hydroxylase", "is_correct": false },
+      { "content": "Phenylalanine hydroxylase", "is_correct": true },
+      { "content": "Homogentisic acid oxidase", "is_correct": false },
+      { "content": "Cystathionine synthase", "is_correct": false }
+    ],
+    "explanation": "Phenylketonuria is caused by a deficiency of phenylalanine hydroxylase, which normally converts phenylalanine to tyrosine. Without this enzyme, phenylalanine accumulates to toxic levels, causing intellectual disability if untreated. Homogentisic acid oxidase deficiency causes alkaptonuria, and cystathionine synthase deficiency causes homocystinuria."
+  },
+  {
+    "title": "Surgery: Acute Abdomen",
+    "content": "A 35-year-old woman presents with sudden onset right lower quadrant pain, nausea, and fever. On examination, there is rebound tenderness at McBurney's point. WBC is 14,000/μL. She mentions her last menstrual period was 6 weeks ago. What is the most important initial step?",
+    "answers": [
+      { "content": "Immediate appendectomy", "is_correct": false },
+      { "content": "CT abdomen with contrast", "is_correct": false },
+      { "content": "Urine pregnancy test", "is_correct": true },
+      { "content": "Ultrasound of the appendix", "is_correct": false }
+    ],
+    "explanation": "While the presentation is classic for acute appendicitis, the mention of a missed menstrual period (6 weeks ago) mandates a pregnancy test before any imaging or surgical intervention. An ectopic pregnancy can mimic appendicitis, and CT radiation or surgical anesthesia could harm an early pregnancy. This tests the student's ability to identify the critical safety step before proceeding with the obvious diagnosis."
+  },
+  {
+    "title": "Psychiatry: Mood Disorders",
+    "content": "A 22-year-old college student presents with 4 days of decreased need for sleep, pressured speech, grandiosity, and impulsive spending of $5,000 on unnecessary items. He has no history of substance use. Two months ago, he had a 3-week episode of depressed mood and anhedonia. What is the most likely diagnosis?",
+    "answers": [
+      { "content": "Major depressive disorder", "is_correct": false },
+      { "content": "Bipolar I disorder", "is_correct": true },
+      { "content": "Bipolar II disorder", "is_correct": false },
+      { "content": "Cyclothymic disorder", "is_correct": false }
+    ],
+    "explanation": "This patient demonstrates a manic episode (≥4 days of elevated mood with decreased sleep, pressured speech, grandiosity, and impulsive behavior) with a prior history of a depressive episode. Bipolar I requires at least one manic episode. Bipolar II involves hypomania (less severe, no significant functional impairment), which does not fit the severity described here with $5,000 in impulsive spending."
+  },
+  {
+    "title": "Immunology: Hypersensitivity Reactions",
+    "content": "A patient develops urticaria, bronchospasm, and hypotension within minutes of receiving IV penicillin. This reaction is mediated by which immunoglobulin?",
+    "answers": [
+      { "content": "IgG", "is_correct": false },
+      { "content": "IgM", "is_correct": false },
+      { "content": "IgE", "is_correct": true },
+      { "content": "IgA", "is_correct": false }
+    ],
+    "explanation": "This is a Type I (immediate) hypersensitivity reaction — anaphylaxis. It is mediated by IgE antibodies bound to mast cells and basophils. Upon re-exposure to the antigen (penicillin), cross-linking of IgE triggers degranulation and release of histamine, leukotrienes, and prostaglandins, causing urticaria, bronchospasm, and vasodilation leading to hypotension."
+  },
+  {
+    "title": "Obstetrics: Prenatal Complications",
+    "content": "A 32-year-old woman at 34 weeks gestation presents with sudden onset painless vaginal bleeding. She has had no prenatal care. Vital signs are stable. The uterus is soft and non-tender. What is the most appropriate initial diagnostic study?",
+    "answers": [
+      { "content": "Digital cervical examination", "is_correct": false },
+      { "content": "Transabdominal ultrasound", "is_correct": true },
+      { "content": "CT abdomen and pelvis", "is_correct": false },
+      { "content": "Amniocentesis", "is_correct": false }
+    ],
+    "explanation": "Painless vaginal bleeding in the third trimester with a soft, non-tender uterus is the classic presentation of placenta previa. Digital cervical examination is absolutely contraindicated as it could provoke massive hemorrhage. Transabdominal ultrasound is the safe, first-line diagnostic study to determine placental location. CT involves unnecessary radiation exposure to the fetus."
+  }
+]

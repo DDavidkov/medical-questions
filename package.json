@@ -1,0 +1,31 @@
+{
+  "name": "medical-questions-demo",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "migrate:up": "node-pg-migrate up --database-url-var DATABASE_URL --migrations-dir migrations --migration-file-language sql",
+    "migrate:down": "node-pg-migrate down --database-url-var DATABASE_URL --migrations-dir migrations --migration-file-language sql",
+    "ingest": "tsx src/ingestion/ingest.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@fastify/cors": "^11.2.0",
+    "fastify": "^5.8.2",
+    "node-pg-migrate": "^8.0.4",
+    "openai": "^6.31.0",
+    "pg": "^8.20.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/pg": "^8.18.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
