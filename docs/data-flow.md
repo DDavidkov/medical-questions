@@ -83,13 +83,9 @@ Shows the shape of data at each stage of the pipeline:
 
 ```mermaid
 graph LR
-    A["<b>Raw Question</b><br/>title<br/>content<br/>answers[]<br/>explanation"]
-    -->|"OpenAI<br/>Enrichment"|
-    B["<b>Enriched Question</b><br/>+ bloom_level<br/>+ keywords[]<br/>+ specialty<br/>+ difficulty<br/>+ relevant_exam"]
-    -->|"OpenAI<br/>Embedding"|
-    C["<b>Index-Ready Question</b><br/>+ embedding[1536]<br/>+ search_vector (tsvector)"]
-    -->|"INSERT"|
-    D[("PostgreSQL<br/>+ pgvector")]
+    A["Raw Question<br/>title, content<br/>answers, explanation"] -->|"OpenAI Enrichment"| B["Enriched Question<br/>+ bloom_level, keywords<br/>+ specialty, difficulty<br/>+ relevant_exam"]
+    B -->|"OpenAI Embedding"| C["Index-Ready Question<br/>+ embedding vector 1536<br/>+ search_vector"]
+    C -->|INSERT| D[("PostgreSQL<br/>+ pgvector")]
 ```
 
 ## Notes on Asynchronous Design
