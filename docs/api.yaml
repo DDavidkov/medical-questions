@@ -1,0 +1,231 @@
+openapi: 3.0.3
+info:
+  title: Medical Questions Hybrid Search API
+  description: >
+    Backend API for searching medical exam questions using hybrid
+    lexical + semantic search, and a chat interface powered by an
+    OpenAI tool-calling agent.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:3000
+    description: Local development
+
+paths:
+  /health:
+    get:
+      summary: Health check
+      operationId: healthCheck
+      responses:
+        "200":
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+
+  /api/search:
+    get:
+      summary: Hybrid search for medical questions
+      description: >
+        Combines full-text (tsvector) and semantic (pgvector) search.
+        Supports optional metadata filters. Results are ranked by a
+        weighted combination of lexical and semantic scores.
+      operationId: searchQuestions
+      parameters:
+        - name: q
+          in: query
+          required: true
+          description: Search query — keywords, topic, or natural language question
+          schema:
+            type: string
+          example: heart failure symptoms
+        - name: specialty
+          in: query
+          required: false
+          description: Filter by medical specialty (partial match)
+          schema:
+            type: string
+          example: Cardiology
+        - name: difficulty
+          in: query
+          required: false
+          description: Filter by difficulty level
+          schema:
+            type: string
+            enum: [Easy, Medium, Hard]
+        - name: bloom_level
+          in: query
+          required: false
+          description: Filter by Bloom's Taxonomy cognitive level
+          schema:
+            type: string
+            enum: [Remember, Understand, Apply, Analyze, Evaluate, Create]
+        - name: relevant_exam
+          in: query
+          required: false
+          description: Filter by relevant exam (partial match)
+          schema:
+            type: string
+          example: USMLE Step 1
+      responses:
+        "200":
+          description: Search results
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  query:
+                    type: string
+                  count:
+                    type: integer
+                  results:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Question"
+        "400":
+          description: Missing query parameter
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+  /api/chat:
+    post:
+      summary: Send a message to the AI agent
+      description: >
+        Sends a user message to the OpenAI tool-calling agent.
+        The agent can search for questions and respond with formatted results.
+        Conversation history is persisted in PostgreSQL.
+      operationId: chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - message
+              properties:
+                message:
+                  type: string
+                  description: The user's message
+                  example: Find me hard cardiology questions
+                conversation_id:
+                  type: string
+                  format: uuid
+                  description: Existing conversation ID to continue. Omit to start a new conversation.
+      responses:
+        "200":
+          description: Agent response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  conversation_id:
+                    type: string
+                    format: uuid
+                  response:
+                    type: string
+                    description: Agent's markdown-formatted response
+        "400":
+          description: Missing message
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+  /api/chat/{id}:
+    get:
+      summary: Fetch conversation history
+      operationId: getConversation
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Conversation ID
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: Conversation messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  conversation_id:
+                    type: string
+                    format: uuid
+                  messages:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        role:
+                          type: string
+                          enum: [user, assistant]
+                        content:
+                          type: string
+        "404":
+          description: Conversation not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+components:
+  schemas:
+    Question:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        title:
+          type: string
+        content:
+          type: string
+        answers:
+          type: array
+          items:
+            type: object
+            properties:
+              label:
+                type: string
+              text:
+                type: string
+              correct:
+                type: boolean
+        explanation:
+          type: string
+        bloom_level:
+          type: string
+          enum: [Remember, Understand, Apply, Analyze, Evaluate, Create]
+        keywords:
+          type: array
+          items:
+            type: string
+        specialty:
+          type: string
+        difficulty:
+          type: string
+          enum: [Easy, Medium, Hard]
+        relevant_exam:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+
+    Error:
+      type: object
+      properties:
+        error:
+          type: string

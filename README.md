@@ -59,18 +59,12 @@ Open http://localhost:5173 to use the chat interface.
 └── .env.example           # Environment template
 ```
 
-## API Endpoints
-
-- `GET /health` — Health check
-- `GET /api/search?q=...` — Hybrid search with optional filters (`specialty`, `difficulty`, `bloom_level`, `relevant_exam`)
-- `POST /api/chat` — Send message to AI agent (`{ message, conversation_id? }`)
-- `GET /api/chat/:id` — Fetch conversation history
-
 ## Documentation
 
 - [Architecture & Design](docs/architecture.md) — System diagrams, database schema, technology decision record
 - [Data Flow](docs/data-flow.md) — Ingestion pipeline and search query flow
 - [Strategic Plan](docs/strategic-plan.md) — Roadmap and risk assessment
+- [API Specification](docs/api.yaml) — OpenAPI 3.0 spec (health, search, chat endpoints)
 - [Original Task](docs/task.md) — Task requirements
 
 ## Key Technical Decisions
